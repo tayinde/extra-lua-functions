@@ -47,7 +47,7 @@ local _ =
 		return count
 	end
 }
-function _.charSplit(str, separator)
+function _.split(str, separator)
 	local splittedList = {}
 	local length = 1
 	local i = 1
