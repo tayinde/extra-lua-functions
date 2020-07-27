@@ -16,7 +16,7 @@ local _ =
 
 	stringToCharList = function (str)
 		local chars = {}
-		for i = 1, string.len(str) do chars[i] = string:sub(i, i) end
+		for i = 1, string.len(str) do chars[i] = str:sub(i, i) end
 		return chars
 	end,
 
