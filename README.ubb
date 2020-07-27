@@ -1,0 +1,60 @@
+[size=50]Extra Lua Functions[/size]
+[hr]
+[size=25]What is this?[/size]
+This is a library of simple functions that I've seen in other languages that I believe should be easily accessible in Lua. It will be added onto more in the future as there are not many functions I have added to this.
+
+[size=25]How to use it?[/size]
+To use this, the only thing you will need to do is copy and paste [url=https://github.com/tayinde/extra-lua-functions/blob/master/compressed-extra-functions.lua]this[/url] code at the top of your Lua script, or if you're too lazy to go to the link, copy and paste this:
+[code=lua]
+local a={reverseList=function(b)local c={}for d=1,#b do c[d]=b[#b-d+1]end;return c end,sum=function(b)local e=0;for d=1,#b do e=e+b[d]end;return e end,stringToCharList=function(f)local g={}for d=1,string.len(f)do g[d]=f:sub(d,d)end;return g end,listToString=function(b)local h=""for d=1,#b do h=h..b[d]end;return h end,indexOf=function(b,string)local i=-1;for d=1,#b do if b[d]==string then i=d;break end end;return i end,count=function(b,j)local k=0;for d=1,#b do if b[d]==j then k=k+1 end end;return k end}function a.charSplit(f,l)local m={}local n=1;local d=1;while d<string.len(f)+1 do if f:sub(d,d+string.len(l)-1)==l then n=n+1;d=d+string.len(l)-1 else m[n]=(m[n]or"")..f:sub(d,d)end;d=d+1 end;return m end _=a
+[/code]
+
+You can access its methods with the _ variable.
+
+[size=25]Examples[/size]
+(remember to have the code from above at the top of your script before using the functions below)
+[code=lua]
+local splittedString = _.split("hello i am a human", " ")
+
+for i = 1, #splittedString do
+	print(splittedString[i])
+end
+
+--[[
+This prints each word in splittedString
+
+The result of this would be:
+
+hello
+i
+am
+a
+human
+]]
+[/code]
+[code=lua]
+local reversed = _.reverseString("hello i am a human")
+print(reversed)
+
+--[[
+This reverses the inputted string
+
+The result of this would be:
+
+namuh a ma i olleh
+]]
+[/code]
+[code=lua]
+local sum = _.sum({1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+print(sum)
+
+--[[
+This gets the sum of a list
+
+The result of this would be:
+
+55
+]]
+[/code]
+[hr]
+There are other functions I did not show examples of, though eventually I will try to make documentation for each of the functions.

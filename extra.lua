@@ -62,3 +62,6 @@ function _.split(str, separator)
 	end
 	return splittedList
 end
+function _.reverseString(str)
+	return _.listToString(_.reverseList(_.stringToCharList(str)))
+end
